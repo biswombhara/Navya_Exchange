@@ -1,4 +1,4 @@
-import toast, {Toaster} from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import "../styles/globals.css";
 
 import { TOKEN_ICO_Provider } from "../context/index"
@@ -6,9 +6,9 @@ import { TOKEN_ICO_Provider } from "../context/index"
 export default function App({ Component, pageProps }) {
   return (
     <>
-    <TOKEN_ICO_Provider>
-      <Component {...pageProps} />
-      <Toaster />
+      <TOKEN_ICO_Provider>
+        <Component {...pageProps} />
+        <Toaster />
       </TOKEN_ICO_Provider>
 
       <script src="assets/js/jquery-3.5.1.min.js"></script>
