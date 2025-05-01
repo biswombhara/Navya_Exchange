@@ -201,10 +201,8 @@
 
 // export default index;
 
-import React from 'react'
 import Coindox from '../Components/Coindox'
 import { useRouter } from 'next/router';
-import Login from '../Components/Login';
 function index() {
 
   const router = useRouter();

@@ -8,8 +8,9 @@ const Hero = ({
   setLoader,
   detail,
   addtokenToMetaMask,
+  user
 }) => {
-  const notifySuccess = (msg) => toast.success(msg,{ duration: 2000 });
+  const notifySuccess = (msg) => toast.success(msg, { duration: 2000 });
 
   const notifyError = (msg) => toast.error(msg, { duration: 2000 });
 
@@ -55,6 +56,10 @@ const Hero = ({
         <div className="row">
           <div className="col-lg-7">
             <div className="hero__content">
+              <h3 className="title mb-45">Hello <span>{user}</span> <br />
+              </h3>
+            </div>
+            <div className="hero__content">
               <h1 className="title mb-45">
                 Participate in the <span>ongoing ICO Token</span>sale
               </h1>
@@ -89,7 +94,7 @@ const Hero = ({
                     {detail?.symbol}
                   </span>
                 </div>
-                
+
                 <div className="progress">
                   <div className="progress-bar" role="progressbar"
                     style={{
@@ -104,8 +109,8 @@ const Hero = ({
               </div>
             </div>
           </div>
-          
-          <div className="col-lg-5">
+
+          {/* <div className="col-lg-5">
             <div className="hero__explore-wrap text-center">
               <div className="hero__explore text-center">
                 <div className="scroll-down" />
@@ -115,7 +120,7 @@ const Hero = ({
                 <h6 className="text-center">ICO Will Start in...</h6>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

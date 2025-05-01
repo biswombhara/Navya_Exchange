@@ -1,6 +1,7 @@
 import React from "react";
 import toast from "react-hot-toast";
 import { useForm } from "@formspree/react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
 
@@ -23,15 +24,15 @@ const Contact = () => {
       <div className="container">
         <div className="ico-contact__wrap">
           <h2 className="title">contact with
-            navya</h2>
+            coindox</h2>
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-lg-6">
-              <input type="text" id="name" name="name" placeholder="enter name" />
+              <input type="text" id="name" name="name" placeholder="Enter name" />
 
             </div>
             <div className="col-lg-6">
-              <input type="email" id="email" name="email" placeholder="email" />
+              <input type="email" id="email" name="email" placeholder="Enter email-id" />
 
             </div>
             <div className="col-lg-12">

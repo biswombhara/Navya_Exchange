@@ -53,9 +53,9 @@ const Token = () => {
                 </li>
               </ul>
               <div className="token__info mt-40">
-                <h2 className="">1 CNL = 0.00013 BTC
+                <h2 className="">1 NAVYA = 0.0001 ETH
                 </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, error?</p>
+                <p>Click on Buy now button to buy NAVYA...</p>
 
                 <div className="token-btn mt-40">
                   <a href="#" className="thm-btn">

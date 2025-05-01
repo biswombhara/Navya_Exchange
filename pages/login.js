@@ -1,9 +1,12 @@
 // pages/login.js
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Login from '../Components/Login';
+import { TOKEN_ICO_Context } from '../context/index';
+
 
 function login() {
+  const { updateUser } = useContext(TOKEN_ICO_Context);
   const router = useRouter();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +26,7 @@ function login() {
   };
 
   return (
-    <Login/>
+    <Login />
   );
 }
 

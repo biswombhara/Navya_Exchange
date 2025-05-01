@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig =  () => {
+  require('dotenv').config();
+  return {
     reactStrictMode: true,
   }
+};
   
   module.exports = nextConfig

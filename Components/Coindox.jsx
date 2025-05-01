@@ -28,8 +28,12 @@ import { TOKEN_ICO_Context } from "../context/index";
 import { shortenAddress } from "../Utils/index";
 import Landing from "../Components/Landing";
 
+
+
 const Coindox = () => {
 const {
+  user,
+  updateUser,
   TOKEN_ICO,
   BUY_TOKEN,
   TRANSFER_ETHER,
@@ -68,11 +72,11 @@ const [detail, setDetail] = useState();
   };
   fetchData();
  }, [account]); 
-  
+
  return (
    <>
    {
-    false ? (
+    user ? (
       <div className="body_warp">
      {ownerModel && (
      <Owner 
@@ -162,7 +166,7 @@ const [detail, setDetail] = useState();
         detail={detail}
         currency={currency}
         ownerModel={ownerModel}
-        />
+        /> 
         <Sidebar/>
         <Hero 
         setBuyModel={setBuyModel}
@@ -172,6 +176,7 @@ const [detail, setDetail] = useState();
         setLoader={setLoader}
         detail={detail}
         addtokenToMetaMask={addtokenToMetaMask}
+        user={user}
         />
         <About/>
         <Features/>

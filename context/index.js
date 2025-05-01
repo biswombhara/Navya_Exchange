@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import { ethers } from "ethers";
 import toast from "react-hot-toast";
+import { useRouter } from 'next/router';
 
 import {
    CHECK_WALLET_CONNECTED,
@@ -17,6 +18,7 @@ import {
 export const TOKEN_ICO_Context = React.createContext();
 
 export const TOKEN_ICO_Provider = ({ children }) => {
+  const router = useRouter();
    const DAPP_NAME = "TOKEN ICO DAPP";
    const currency = "ETH";
    const network = "Holesky";
@@ -96,7 +98,7 @@ export const TOKEN_ICO_Provider = ({ children }) => {
                await transaction.wait();
                setLoader(false);
                notifySuccess("Tansaction completed successfully");
-               window.location.reload();
+               //window.location.reload();
             }
          }
       } catch (error) {
@@ -126,7 +128,7 @@ export const TOKEN_ICO_Provider = ({ children }) => {
                await transaction.wait();
                setLoader(false);
                notifySuccess("Tansaction completed successfully");
-               window.location.reload();
+               //window.location.reload();
             }
          }
       } catch (error) {
@@ -149,7 +151,7 @@ export const TOKEN_ICO_Provider = ({ children }) => {
             await transaction.wait();
             setLoader(false);
             notifySuccess("Tansaction completed successfully");
-            window.location.reload();
+            //window.location.reload();
          }
       } catch (error) {
          console.log(error);
@@ -172,7 +174,7 @@ export const TOKEN_ICO_Provider = ({ children }) => {
             await transaction.wait();
             setLoader(false);
             notifySuccess("Tansaction completed successfully");
-            window.location.reload();
+            //window.location.reload();
          }
       } catch (error) {
          console.log(error);
@@ -198,7 +200,7 @@ export const TOKEN_ICO_Provider = ({ children }) => {
             await transaction.wait();
             setLoader(false);
             notifySuccess("Tansaction completed successfully");
-            window.location.reload();
+            //window.location.reload();
          }
       } catch (error) {
          console.log(error);
@@ -226,7 +228,8 @@ export const TOKEN_ICO_Provider = ({ children }) => {
             await transaction.wait();
             setLoader(false);
             notifySuccess("Tansaction completed successfully");
-            window.location.reload();
+            router.push("/");
+            //window.location.reload();
          }
       } catch (error) {
          console.log(error);
@@ -253,7 +256,8 @@ export const TOKEN_ICO_Provider = ({ children }) => {
             await transaction.wait();
             setLoader(false);
             notifySuccess("Tansaction completed successfully");
-            window.location.reload();
+
+            //window.location.reload();
          }
       } catch (error) {
          console.log(error);
@@ -261,10 +265,16 @@ export const TOKEN_ICO_Provider = ({ children }) => {
          setLoader(false);
       }
    };
+   const [user, setUser] = useState("Biswombhara"); 
+  const updateUser = (newValue) => {
+    setUser(newValue);
+  };
 
    return (
       <TOKEN_ICO_Context.Provider
          value={{
+            user,
+            updateUser,
             TOKEN_ICO,
             BUY_TOKEN,
             TRANSFER_ETHER,
@@ -282,7 +292,7 @@ export const TOKEN_ICO_Provider = ({ children }) => {
             TOKEN_ADDRESS,
             loader,
             account,
-            currency,
+            currency
          }}
       >
          {children}
